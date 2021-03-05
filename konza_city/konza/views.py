@@ -8,29 +8,30 @@ import csv
 
 s1 = SearchObject('media/images')
 
-queryset = Post.objects.all()
+# queryset = Post.objects.all()
 
 
-def query_to_csv(queryset, filename='items.csv', **override):
-    field_names = [field.name for field in queryset.model._meta.fields]
+# def query_to_csv(queryset, filename='items.csv', **override):
+#     field_names = [field.name for field in queryset.model._meta.fields]
 
-    def field_value(row, field_name):
-        if field_name in override.keys():
-            return override[field_name]
-        else:
-            return row[field_name]
-    with open(filename, 'w+', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, delimiter=',')
-        writer.writerow(field_names)
-        for row in queryset.values(*field_names):
-            writer.writerow([field_value(row, field) for field in field_names])
+#     def field_value(row, field_name):
+#         if field_name in override.keys():
+#             return override[field_name]
+#         else:
+#             return row[field_name]
+#     with open(filename, 'w+', encoding='utf-8') as csvfile:
+#         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, delimiter=',')
+#         writer.writerow(field_names)
+#         for row in queryset.values(*field_names):
+#             writer.writerow([field_value(row, field) for field in field_names])
 
 
-query_to_csv(queryset, filename='data.csv', user=1, group=1)
+# query_to_csv(queryset, filename='data.csv', user=1, group=1)
 
 
 def index(request):
     if request.method == 'POST':
+
         form = InputForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
@@ -47,9 +48,19 @@ def success(request):
 
 
 def show(request):
+    posts = Post.objects.all().order_by('-created_on')[:1]
     data = s1.process()
+    s, y = data.keys(), data.values()
+    d = read_data('data.csv')
+    key = d['image']
+    img_src = 'media/' + key[0]
+    processed_img = 'media/new.jpg'
     context = {
-        "url": data
+        "keys": s,
+        "values": y,
+        "image": img_src,
+        "p_img": processed_img,
+        "posts": posts,
     }
 
     return render(request, 'show.html', context)
