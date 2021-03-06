@@ -6,7 +6,7 @@ from .models import *
 import csv
 from django.core.files.storage import FileSystemStorage
 
-s1 = SearchObject('media/images')
+s1 = SearchObject('media/images', 'media/videos')
 
 # queryset = Post.objects.all()
 
@@ -81,6 +81,7 @@ def upload2(request):
         form = VideoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            s1.process_video()
             return redirect('upload')
     else:
         form = VideoForm()
