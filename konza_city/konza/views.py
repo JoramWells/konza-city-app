@@ -4,7 +4,7 @@ from .forms import *
 from .SearchObject import *
 from .models import *
 import csv
-
+from django.core.files.storage import FileSystemStorage
 
 s1 = SearchObject('media/images')
 
@@ -64,3 +64,24 @@ def show(request):
     }
 
     return render(request, 'show.html', context)
+
+
+def upload_video(request):
+    if request.method == 'POST':
+        upload_file = request.FILES['document']
+        fs = FileSystemStorage()
+        name = fs.save(upload_file.name, upload_file)
+        url = fs.url(name)
+        print(url)
+    return render(request, 'upload_video.html')
+
+
+def upload2(request):
+    if request.method == 'POST':
+        form = VideoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('upload')
+    else:
+        form = VideoForm()
+    return render(request, 'upload2.html', {'form': form})

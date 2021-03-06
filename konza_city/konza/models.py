@@ -8,3 +8,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class VideoModel(models.Model):
+    title = models.CharField(max_length=100)
+    video = models.FileField(upload_to="videos/", null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

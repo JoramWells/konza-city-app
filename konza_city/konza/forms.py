@@ -9,3 +9,9 @@ class InputForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['name', 'image']
+
+
+class VideoForm(forms.ModelForm):
+    class Meta:
+        model = VideoModel
+        fields = ['title', 'video']

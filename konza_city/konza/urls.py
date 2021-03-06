@@ -6,6 +6,9 @@ from django.conf import settings
 urlpatterns = [
     path('', views.index, name='index'),
     path('show', views.show, name='show'),
+    path('upload', views.upload_video, name='upload'),
+    path('upload2', views.upload2, name='upload2')
+
 
 ]
 
