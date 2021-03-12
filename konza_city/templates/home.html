@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    <title>XpressLite</title>
+</head>
+<body >
+    <div>
+        <h2 style="color: rgb(59, 56, 56); text-align: center; background-color: cadetblue;" class="p-3 mb-0">XpressLite</h2>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light mt-0" style="position: sticky; top: 0; z-index: 1; background-color: cadetblue;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <b style="color: #ff4d4d;">X</b>press<b style="color: #ff4d4d;">L</b>ite</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: white;"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">Plans</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="color: white;">Developers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="color: white;">Businesses</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-lg-0">
+                  <li class="nav-item">Login</li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="background-color: cadetblue;">
+        <div class="container p-5 text-center" style=" font-size: 1.1rem; background-color: white; height: 200px;  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);">
+            XpressLite is an online based cloud platform that provides realtime information about traffic flow.
+
+        </div>
+    </div>
+    <div class="container" style="margin-top: 50px;">
+        <h4>Learn how we help businneses grow</h4>
+<div class="row">
+    <div class="col-sm-6">
+        <h4>Traffic flow</h4>
+        <div class="card p-2">
+            <div class="card-title">Traffic Flow</div>
+            <div class="card-body">
+                Realtime traffic information
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <h4>Available Parking</h4>
+        <div class="card p-2">
+            <div class="card-title">Available parking spaces</div>
+            <div class="card-body">
+                Realtime parking spaces
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="mt-5 mr-auto ml-auto">
+            <div class="col-sm-6 ">
+                <h4>Car Tracking</h4>
+                <div class="card p-2">
+                    <div class="card-title">
+                        Car Tracking
+                    </div>
+                    <div class="card-body">
+                        Track your lost vehicle
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 style="color: white; text-align: center;" class="mt-5">Payment options</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h5>Enter your phone number to billed directly</h5>
+            </div>
+            <div class="col-sm-6 ">
+                <img src="{% static 'image.png'%}" style="width: 400px;" class="mr-auto ml-auto" alt="">
+            </div>
+        </div>
+
+
+    </div>
+    
+    
+</body>
+</html>

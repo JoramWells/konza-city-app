@@ -4,10 +4,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.home, name='home'),
+    path('upload', views.index, name='index'),
     path('show', views.show, name='show'),
-    path('upload', views.upload_video, name='upload'),
-    path('upload2', views.upload2, name='upload2')
+    path('upload2', views.upload_video, name='upload'),
+    path('upload3', views.upload2, name='upload2')
 
 
 ]

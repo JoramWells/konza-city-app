@@ -8,6 +8,10 @@ from django.core.files.storage import FileSystemStorage
 
 s1 = SearchObject('media/images', 'media/videos')
 
+
+def home(request):
+    return render(request, 'home.html')
+
 # queryset = Post.objects.all()
 
 
